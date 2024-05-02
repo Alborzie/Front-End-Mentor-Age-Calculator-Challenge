@@ -102,22 +102,12 @@ main {
             padding: 5px;
           }
         }
-        &::after{
-          content: "This field is requaired";
-          color: $Lightred;
-          font-family: "poppins-italic";
-          font-size: 0.7em
-        }
       }
     }
 
     & > div {
       margin-top: -25px;
       text-align: end;
-
-      @include size-xs {
-        text-align: center;
-      }
 
       & > svg {
         background-color: $Purple;
@@ -131,6 +121,28 @@ main {
         &:hover {
           background-color: $Offblack;
         }
+      }
+
+      &>span{
+        text-align: left;
+        color: $Lightred;
+        font-family: "poppins-itabold";
+        margin: 5px;
+      }
+    }
+
+    &>h3{
+      font-family: "poppins-itabold-extra";
+      color: $Offblack;
+      font-size: 3rem;
+      margin: 15px auto;
+      @include size-xs{
+        font-size: 2.5rem;
+      }
+
+      &>span{
+        color: $Purple;
+        padding-right: 10px;
       }
     }
   }

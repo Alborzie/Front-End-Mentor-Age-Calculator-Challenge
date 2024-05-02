@@ -57,7 +57,9 @@
         </form>
 
         <div>
-          <svg id="check"
+          <span id="error"></span>
+          <svg
+            id="check"
             xmlns="http://www.w3.org/2000/svg"
             width="46"
             height="44"
@@ -70,11 +72,46 @@
             </g>
           </svg>
         </div>
+
+        <h3 id="years"><span>--</span>YEARS</h3>
+        <h3 id="months"><span>--</span>MONTHS</h3>
+        <h3 id="days"><span>--</span>DAYS</h3>
       </section>
     </main>
 
     <script>
-      
+      let check_date_url = "https://digidates.de/api/v1/checkdate?date=";
+      let check_age_url = "https://digidates.de/api/v1/age/";
+
+      document.getElementById("check").addEventListener("click", () => {
+        fetch(
+          `${check_date_url}${document.getElementById("year").value}-${
+            document.getElementById("month").value
+          }-${document.getElementById("day").value}`
+        ).then((result1) => {
+          result1.json().then((obj1) => {
+            document.getElementById("error").innerText = "";
+            if (obj1.checkdate) {
+              fetch(
+                `${check_age_url}${document.getElementById("year").value}-${
+                  document.getElementById("month").value
+                }-${document.getElementById("day").value}`
+              ).then((result2) => {
+                result2.json().then((obj2) => {
+                  document.getElementById("years").children[0].innerText = obj2["ageextended"]["years"]
+                  document.getElementById("months").children[0].innerText = obj2["ageextended"]["months"]
+                  document.getElementById("days").children[0].innerText = obj2["ageextended"]["days"]
+                });
+              });
+            } else{
+              document.getElementById("error").innerText = "**invalid date**";
+              document.getElementById("years").children[0].innerText = '--'
+              document.getElementById("months").children[0].innerText = '--'
+              document.getElementById("days").children[0].innerText = '--'
+            }
+          });
+        });
+      });
     </script>
   </body>
 </html>
