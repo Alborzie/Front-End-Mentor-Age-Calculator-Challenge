@@ -1,1 +1,134 @@
-/*# sourceMappingURL=styles.css.map */
+@font-face {
+  font-family: "poppins-regular";
+  src: url("../assets/fonts/Poppins-Regular.ttf");
+}
+@font-face {
+  font-family: "poppins-italic";
+  src: url("../assets/fonts/Poppins-Italic.ttf");
+}
+@font-face {
+  font-family: "poppins-bold";
+  src: url("../assets/fonts/Poppins-Bold.ttf");
+}
+@font-face {
+  font-family: "poppins-itabold";
+  src: url("../assets/fonts/Poppins-BoldItalic.ttf");
+}
+@font-face {
+  font-family: "poppins-bold-extra";
+  src: url("../assets/fonts/Poppins-ExtraBold.ttf");
+}
+@font-face {
+  font-family: "poppins-itabold-extra";
+  src: url("../assets/fonts/Poppins-ExtraBoldItalic.ttf");
+}
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+  font-family: "poppins-regular";
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  background-color: hsl(0, 0%, 94%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main > section {
+  /* Extra small devices (phones, 600px and down) */
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  /* Medium devices (landscape tablets, 768px and up) */
+  /* Large devices (laptops/desktops, 992px and up) */
+  height: 70%;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 15px 15px 150px 15px;
+  padding: 25px;
+}
+@media only screen and (max-width: 600px) {
+  main > section {
+    width: 90%;
+  }
+}
+@media only screen and (min-width: 600px) {
+  main > section {
+    width: 75%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  main > section {
+    width: 60%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  main > section {
+    width: 45%;
+  }
+}
+main > section > form {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-bottom: 30px;
+  border-bottom: 2px solid hsl(0, 0%, 86%);
+}
+main > section > form > div {
+  display: flex;
+  justify-content: normal;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 33%;
+}
+main > section > form > div > label {
+  color: hsl(0, 1%, 44%);
+  font-size: 0.5em;
+  font-family: "poppins-bold";
+}
+main > section > form > div > input {
+  width: 75%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid hsl(0, 0%, 86%);
+  font-size: 1em;
+  font-family: "poppins-bold-extra";
+  transition: all 0.5s ease-in-out;
+  /* Extra small devices (phones, 600px and down) */
+}
+main > section > form > div > input:focus {
+  background-color: hsl(0, 0%, 8%);
+  color: hsl(0, 0%, 94%);
+}
+@media only screen and (max-width: 600px) {
+  main > section > form > div > input {
+    font-size: 0.8em;
+    padding: 5px;
+  }
+}
+main > section > div {
+  margin-top: -25px;
+  text-align: end;
+  /* Extra small devices (phones, 600px and down) */
+}
+@media only screen and (max-width: 600px) {
+  main > section > div {
+    text-align: center;
+  }
+}
+main > section > div > svg {
+  background-color: hsl(259, 100%, 65%);
+  padding: 10px;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+main > section > div > svg:hover {
+  background-color: hsl(0, 0%, 8%);
+}/*# sourceMappingURL=styles.css.map */
