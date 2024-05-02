@@ -110,6 +110,12 @@ main > section > form > div > input:focus {
     padding: 5px;
   }
 }
+main > section > form > div::after {
+  content: "This field is requaired";
+  color: hsl(0, 100%, 67%);
+  font-family: "poppins-italic";
+  font-size: 0.7em;
+}
 main > section > div {
   margin-top: -25px;
   text-align: end;

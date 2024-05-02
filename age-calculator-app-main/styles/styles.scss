@@ -102,6 +102,12 @@ main {
             padding: 5px;
           }
         }
+        &::after{
+          content: "This field is requaired";
+          color: $Lightred;
+          font-family: "poppins-italic";
+          font-size: 0.7em
+        }
       }
     }
 
