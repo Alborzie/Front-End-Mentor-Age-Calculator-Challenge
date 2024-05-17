@@ -101,6 +101,8 @@
                   document.getElementById("years").children[0].innerText = obj2["ageextended"]["years"]
                   document.getElementById("months").children[0].innerText = obj2["ageextended"]["months"]
                   document.getElementById("days").children[0].innerText = obj2["ageextended"]["days"]
+                  document.getElementById("check").classList.remove("deactive")
+                  document.getElementById("check").classList.add("active")
                 });
               });
             } else{
@@ -108,7 +110,9 @@
               document.getElementById("years").children[0].innerText = '--'
               document.getElementById("months").children[0].innerText = '--'
               document.getElementById("days").children[0].innerText = '--'
-            }
+              document.getElementById("check").classList.remove("active")
+              document.getElementById("check").classList.add("deactive")
+            } 
           });
         });
       });
